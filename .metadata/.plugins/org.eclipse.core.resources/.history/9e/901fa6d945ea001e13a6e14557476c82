@@ -1,0 +1,20 @@
+package sec01;
+
+import java.util.ArrayList;
+
+public class StreamEx {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> arrList1 = new ArrayList<>();
+		arrList1.add(10);
+		arrList1.add(7);
+		arrList1.add(5);
+		
+		for (int i : arrList1) {
+			System.out.println(i);
+		}
+		
+	}
+
+}

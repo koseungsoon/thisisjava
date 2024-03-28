@@ -1,0 +1,11 @@
+package sec01;
+
+public interface Calculable {
+
+	//상
+	
+	//추
+	
+	void calculate();
+	
+}

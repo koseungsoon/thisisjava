@@ -1,0 +1,14 @@
+package sec01;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductStreamEx {
+
+	public static void main(String[] args) {
+		
+		List<Product>  products=new ArrayList<Product>();
+		
+	}
+
+}

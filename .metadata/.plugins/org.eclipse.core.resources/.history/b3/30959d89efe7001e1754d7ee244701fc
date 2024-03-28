@@ -1,0 +1,21 @@
+package sec01;
+
+public class Person {
+
+	void action(Workable workable) {
+		
+		// 1)매개변수 X, return X	
+		//workable.work();
+		
+		//2) 매개변수O , return X
+//		workable.work("초콜릿");
+		
+		//3) 매개변수X , return O
+//		workable.work();
+//		String gift = workable.work();
+		
+		//4) 매개변수O , return O
+		workable.work("초콜릿");
+		String gift = workable.work("gift");
+	}
+}

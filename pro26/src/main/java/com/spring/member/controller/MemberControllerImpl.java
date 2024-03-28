@@ -1,0 +1,107 @@
+package com.spring.member.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+import com.spring.member.service.MemberService;
+import com.spring.member.vo.MemberVO;
+@Controller("memberController")
+public class MemberControllerImpl extends MultiActionController implements MemberController{
+
+	@Autowired
+	private MemberService memberService;
+	
+	
+	
+	
+//	public void setMemberService(MemberService memberService) {
+//		this.memberService = memberService;
+//	}
+
+
+	//회원 조회
+	@RequestMapping(value="/member/listMembers.do")
+	@Override
+	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String viewName=getViewName(request);
+		
+//		System.out.println("뷰네임: "+viewName);
+//		System.out.println("memberService: "+memberService);
+		
+		List membersList=memberService.listMembers();
+		
+		ModelAndView mav=new ModelAndView(viewName);
+		
+		mav.addObject("membersList",membersList);
+		
+		
+		return mav;
+	}
+	
+	//회원 가입 창 가기
+	@RequestMapping(value="/member/memberForm.do")
+	public ModelAndView memberForm (HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return new ModelAndView("memberForm");
+	}
+	
+	//회원 가입 
+		@RequestMapping(value="/member/addMember.do")
+		public ModelAndView addMember (@ModelAttribute("member") MemberVO member ,HttpServletRequest request, HttpServletResponse response) throws Exception {
+			
+			memberService.addMember(member);
+			List membersList=memberService.listMembers();
+			
+			//PRG패턴 : POST - REDIRECT - GET
+			ModelAndView mav=new ModelAndView("redirect:/member/listMembers.do");
+			mav.addObject("membersList",membersList);
+					
+			return mav;
+			
+			
+		}
+	
+	
+
+	//요청명과 같은 파일명으로 나오게 하도록
+	private String getViewName(HttpServletRequest request) throws Exception {
+		String contextPath = request.getContextPath();
+		String uri = (String) request.getAttribute("javax.servlet.include.request_uri");
+		if (uri == null || uri.trim().equals("")) {
+			uri = request.getRequestURI();
+		}
+
+		int begin = 0;
+		if (!((contextPath == null) || ("".equals(contextPath)))) {
+			begin = contextPath.length();
+		}
+
+		int end;
+		if (uri.indexOf(";") != -1) {
+			end = uri.indexOf(";");
+		} else if (uri.indexOf("?") != -1) {
+			end = uri.indexOf("?");
+		} else {
+			end = uri.length();
+		}
+
+		String fileName = uri.substring(begin, end);
+		if (fileName.indexOf(".") != -1) {
+			fileName = fileName.substring(0, fileName.lastIndexOf("."));
+		}
+		if (fileName.lastIndexOf("/") != -1) {
+			fileName = fileName.substring(fileName.lastIndexOf("/"), fileName.length());
+		}
+		return fileName;
+	}
+	
+}

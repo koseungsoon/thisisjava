@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	
+
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+
+		<property name="mappings">
+			<props>
+				<prop key="/member/*.do">memberController</prop>
+			</props>
+		</property>
+	</bean>
+
+
+
+	<!-- InternalResourceView(예: 서블릿 및 JSP)와 JstlView와 같은 하위 클래스를 지원하는 UrlBasedViewResolver의 
+		편리한 하위 클래스입니다 -->
+
+	<!-- JstlView JSTL 페이지(예: JSP 표준 태그 라이브러리를 사용하는 JSP 페이지)에 대한 InternalResourceView 
+		전문화 -->
+	<bean id="viewResolver"	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+		<property name="prefix" value="/WEB-INF/views/"></property>
+		<property name="suffix" value=".jsp"></property>
+
+	</bean>
+
+
+
+	<bean id="memberController"	class="com.spring.member.controller.MemberControllerImpl">
+		<property name="methodNameResolver">
+			<ref local="methodResolver" />
+		</property>
+		<property name="memberService" ref="memberService"></property>
+	</bean>
+
+
+
+	<!-- 메소드 이름 간의 매핑을 정의 -->
+	<bean id="methodResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/member/listMembers.do">listMembers</prop>
+
+			</props>
+		</property>
+	</bean>
+
+</beans>

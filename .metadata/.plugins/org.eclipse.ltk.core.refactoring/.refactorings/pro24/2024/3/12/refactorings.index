@@ -1,0 +1,21 @@
+1710826144283	Move 'action-servlet.xml' to 'WEB-INF'
+1710829438920	Delete element
+1710829482647	Rename resource 'SqlMapConfig.xml'
+1710829860575	Delete element
+1710829897930	Rename resource 'action-dataSource.xml'
+1710830198177	Delete element
+1710830200810	Delete element
+1710830571325	Rename package 'mybatis.mappers'
+1710830602903	Delete element
+1710899527369	Copy files
+1710899595650	Copy folder
+1710899625589	Copy file
+1710899650741	Copy package
+1710899659185	Copy package
+1710899662950	Copy package
+1711087412109	Copy compilation unit
+1711087421927	Copy compilation units
+1711087436664	Copy compilation units
+1711087454708	Copy compilation units
+1711087595495	Copy files
+1711087788133	Copy packages

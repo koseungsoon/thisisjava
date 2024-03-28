@@ -1,0 +1,13 @@
+package sec02;
+
+import java.util.ArrayList;
+
+public class FilterEx {
+
+	public static void main(String[] args) {
+		
+		List arrList=new ArrayList<>();
+
+	}
+
+}

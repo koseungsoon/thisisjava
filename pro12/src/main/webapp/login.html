@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function fn_validate(){
+	let name=document.form1.user_id.value;
+	let password=document.form1.user_password.value;
+	console.log(name);
+	
+	if(name===''||name.length==0||password.length==0||password===''){
+		window.alert("아이디,패스워드를 입력하세요");
+	} else{
+		form1.method="get";
+		form1.action="result2.jsp";
+		form1.submit();
+	}
+	
+}
+</script>
+
+
+</head>
+<body>
+<form action="result2.jsp" method="get" name="form1">
+아이디: <input type="text" name="user_id"><br>
+비밀번호: <input type="password" name="user_password"><br>
+<!-- <input type="submit" value="로그인">  -->
+<input type="button" id="btn1" value="login#" onclick="fn_validate();"  >
+
+
+</form>
+
+
+
+
+</body>
+</html>

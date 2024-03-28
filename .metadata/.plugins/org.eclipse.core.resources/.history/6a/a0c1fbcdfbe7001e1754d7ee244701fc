@@ -1,0 +1,18 @@
+package ch16;
+
+
+
+public class Ex16_6 {
+
+	@FunctionalInterface
+	public static interface Function{
+		void fun();
+	}
+
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

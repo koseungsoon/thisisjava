@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.4.js">
+</script>
+<script>
+    function fn_process() {
+        $.ajax({
+           
+            
+            data : {menu : "짜장2"},
+            success : function (success_data, status) {
+                
+                
+                
+                /* $('#here').$('input').val; */
+            },
+            error : function () {
+                console.log("에러남")
+            },
+            complete : function () {
+                console.log("완료함")
+            }
+        })
+    }
+
+
+    function fn_process2() {
+        $.ajax({
+            type : "get",
+            dataType : "text",
+            url : "http://localhost:8080/pro16/ajaxtest1",
+            data : {menu : "jjambbong"}
+
+        })
+    }
+
+
+</script>
+
+</head>
+
+<body>
+아래는 이글에 대한 댓글입니다.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="text">
+
+<input type="button" value="댓글작성" onclick="fn_process()" > 
+
+<div id="here">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+package sec01;
+
+public class LamdaEx {
+
+	static void action(Calculable calculable) {
+		System.out.println("hi");
+	}
+	
+	public static void main(String[] args) {
+		action(new Calculable() {
+
+			@Override
+			public void calculate(int x, int y) {
+				
+			}
+			
+		});
+		
+		
+
+	}
+
+}

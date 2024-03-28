@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ViewServlet.java&apos; to &apos;pro13/src/main/java/sec01.ex01&apos;&#x0D;&#x0A;- Original project: &apos;pro08&apos;&#x0D;&#x0A;- Destination element: &apos;pro13/src/main/java/sec01.ex01&apos;&#x0D;&#x0A;- Original element: &apos;sec01.ex01.ViewServlet.java&apos;" description="Copy compilation unit" destination="=pro13/src\/main\/java&lt;sec01.ex01" element1="/src\/main\/java&lt;sec01.ex01{ViewServlet.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1709093610317" units="1" version="1.0"/>
+</session>

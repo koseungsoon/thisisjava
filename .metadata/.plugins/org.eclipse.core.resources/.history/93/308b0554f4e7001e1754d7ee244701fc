@@ -1,0 +1,12 @@
+package sec02;
+
+public class Computer {
+
+	static double add(double x, double y) {
+		return x+y;
+	}
+	
+	static double add2(double x, double y) {
+		return x-y;
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;LamdaEx.java&apos; to &apos;ch16/src/sec01&apos;&#x0D;&#x0A;- Original project: &apos;ch16&apos;&#x0D;&#x0A;- Destination element: &apos;ch16/src/sec01&apos;&#x0D;&#x0A;- Original element: &apos;sec01.LamdaEx.java&apos;" description="Copy compilation unit" destination="/src&lt;sec01" element1="/src&lt;sec01{LamdaEx.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1711070030313" units="1" version="1.0"/>
+</session>

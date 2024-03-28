@@ -1,0 +1,14 @@
+package com.spring.ex02;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller (value = "longinController")
+public class LoginController {
+
+	@RequestMapping
+	public void login5(Model model){
+		
+	}
+	
+}

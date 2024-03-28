@@ -1,0 +1,31 @@
+package sec01;
+
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+public class StreamEx {
+
+	public static void main(String[] args) {
+		
+		//기본 방식(반복문 사용)
+		ArrayList<String> arrList1 = new ArrayList<>();
+		arrList1.add("a");
+		arrList1.add("b");
+		arrList1.add("c");
+		
+		for (String str : arrList1) {
+			System.out.println(str);
+		}
+		
+		System.out.println("======================");
+		
+		ArrayList<Integer> arrListStream1=(ArrayList<Integer>) arrList1.stream();
+		
+		Stream<String> arrListStream2=arrList1.stream();
+		
+		arrListStream2.forEach( (x)->{System.out.println(x);});
+		
+		
+	}
+
+}
